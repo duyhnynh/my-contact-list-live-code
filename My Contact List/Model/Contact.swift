@@ -7,8 +7,11 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
-struct Contact{
+struct Contact: Identifiable{
+    //Everytime create a new contact, this generate a very long string which guarantee everything is unique
+    var id = UUID()
     var name: String
     var email: String
     var phone: String
@@ -17,4 +20,5 @@ struct Contact{
     var image: Image{
         Image(ImageName)
     }
+    var locationCoordinate: CLLocationCoordinate2D
 }
